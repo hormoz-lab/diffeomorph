@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "diffeomorph"
+version = "0.1.0"
+description = "End-to-end differentiable framework for learning morphogenesis."
+authors = [
+    {name="Seong Ho Pahng", email="spahng@ds.dfci.harvard.edu"},
+]
+readme = "README.md"
+license = {file = "LICENSE"}
+urls = {Homepage = "https://github.com/hormoz-lab/diffeomorph"}
+requires-python = ">=3.11"
+dependencies = [
+    "optax>=0.1.7",
+    "e3nn-jax>=0.20.7",
+    "diffrax>=0.7.0",
+    "equinox>=0.12.1",
+    "plotly",
+    "matplotlib",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+cpu = ["jax>=0.6.0"]
+gpu = ["jax[cuda12]>=0.6.0"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
